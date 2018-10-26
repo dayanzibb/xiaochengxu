@@ -1,0 +1,25 @@
+<!--pages/single_topic/single_topic.wxml-->
+<view class='cell'>
+  <text class='title'>({{id+1}}/10).{{list[id].title}}</text>
+  <view class='select' wx:for="{{answer}}" wx:key="index" bindtap="selected"  >
+    <text class='select-item' data-key="{{item}}" data-index="{{index}}" style="{{key===index?'color:#fff;background:#21c0c0':'color:#666;background:#f4f4f4'}}">{{item}}</text>
+  </view>
+</view>
+<view class='result'>
+<view wx:if="{{isShow}}">
+  <view  class='right' wx:if="{{isRight}}">
+    <image src="https://www.wyptheroc.com:3000/right.png" style="width:60rpx;height:60rpx"></image>
+  </view>
+  <view  class='error' wx:else>
+    <image src="https://www.wyptheroc.com:3000/error.png" style="width:60rpx;height:60rpx"></image>
+  </view>
+  <text class='key'>正确答案：{{list[id].answer}}</text>
+  </view>
+  <text class='see' bindtap="showkey"  data-answer="{{list[id].answer}}">偷偷看下答案</text>
+</view>
+<view class='btn'>
+  <text class='prev' bindtap="prev">上一题</text>
+  <text class='line'></text>
+  <text class='next' bindtap="next">下一题</text>
+</view>
+

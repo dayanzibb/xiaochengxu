@@ -1,0 +1,33 @@
+<!--pages/mynews/mynews.wxml-->
+<form bindsubmit='formSubmit'>
+<view class='rule'></view>
+<view class='cell'>
+  <text>昵称</text>
+  <input type="text" value="{{user.nickName==null?'未设置':user.nickName}}" name="uname"></input>
+</view>
+<view class='rule'></view>
+<view class='cell'>
+  <text>生日</text>
+  <picker mode="date" value="{{date}}" start="1900-01-01" end="2018-01-01"  bindchange="bindDateChange">
+    <view class="picker">{{date==null?'未设置':date}}</view>
+  </picker>
+</view>
+<view class='rule'></view>
+<view class='cell'>
+  <text>电话</text>
+  <input type="text" value='{{user.phone==null?"未设置":user.phone}}' name="num"></input>
+</view>
+<view class='rule'></view>
+<view class='cell'>
+  <text>邮箱</text>
+  <input type="email" value='{{user.email==null?"未设置":user.email}}' name="email"></input>
+</view>
+<view class='rule'></view>
+<view class='cell'>
+  <text>地址</text>
+  <input type="text" value='{{user.city==null?"未设置":user.city}}' name="address"></input>
+</view>
+<view class='rule'></view>
+<button class='btn' formType="submit">提交</button>
+</form>
+

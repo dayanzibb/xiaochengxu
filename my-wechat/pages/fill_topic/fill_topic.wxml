@@ -1,0 +1,15 @@
+<!--pages/fill_topic/fill_topic.wxml-->
+<view class='cell'>
+  <view class='title'>({{id+1}}/5).{{list[id].title}}</view>
+</view>
+<view class='result'>
+<view wx:if="{{isShow}}">
+  <view class='key'>正确答案：{{list[id].answer}}</view>
+  </view>
+  <text class='see' bindtap="showkey"  data-answer="{{list[id].answer}}">偷偷看下答案</text>
+</view>
+<view class='btn'>
+  <text class='prev' bindtap="prev">上一题</text>
+  <text class='line'></text>
+  <text class='next' bindtap="next">下一题</text>
+</view>

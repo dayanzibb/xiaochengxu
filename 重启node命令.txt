@@ -1,0 +1,14 @@
+1.查看node运行形况:
+ps -ef|grep node
+2.杀死node进程
+sudo pkill node
+3.再次查看node是否成功杀死
+ps -ef|grep node
+4.进入/app/目录下,执行app.js后台运行命令
+node app.js &
+5.退出终端
+exit
+
+
+
+mysql 密码 mysql-999

@@ -1,0 +1,108 @@
+<!--pages/zixun_news/zixun_news.wxml-->
+<!--内容-->
+<view class='title'>
+  <view class='top'>
+    <view class='slide'></view>
+    <view class='topic'>
+      <text>{{list.title}}</text>
+    </view>
+  </view>
+  <view class='time'>
+    <view class='text'>
+      <text>{{list.time}}</text>
+    </view>
+    <view style="margin-left:-240rpx" class='text'>
+      <text>{{list.newsfrom}}</text>
+    </view>
+    <view class='text'>
+      <text>{{list.click}}评</text>
+    </view>
+  </view>
+</view>
+<view class='content'>
+  <rich-text nodes="{{list.content}}"></rich-text>
+  <!--
+  <text>导读：今天给大家分享一个用PS制作的案例——折纸图形，后续会有更多的案例发布在优才论坛，敬请关注哦~</text>
+  <image src='http://127.0.0.1:3000/1.png' mode='widthFix'></image>
+  <text>大家好！如上图，三步打造一枚精致折纸图形，真的就这么简单，下面就为大家介绍下大致思路和方法：</text>
+  <text>1.第一步：创建图形，圆角矩形工具，调整一个合适圆角，填充颜色，然后拷贝，绿色的锚点拉长，旋转角度45度，得到如下图：</text>
+  <image src='http://127.0.0.1:3000/2.png' mode='widthFix'></image>
+  <image src='http://127.0.0.1:3000/3.png' mode='widthFix'></image>>
+  <text>2.第二部：绿色矩形，调节锚点，用直接选择工具，选择图中黑色那个锚点，移动拖到合适位置，如下图(1-4)：</text>
+  <image src='http://127.0.0.1:3000/4.png' mode='widthFix'></image>
+  <image src='http://127.0.0.1:3000/5.png' mode='widthFix'></image>
+  <text>3.第三部：蓝色的矩形，做个渐变，选中图形，在添加形状样式里做个渐变叠加，由深蓝到浅蓝；</text>
+  <image src='http://127.0.0.1:3000/6.png' mode='widthFix'></image>
+  <image src='http://127.0.0.1:3000/7.png' mode='widthFix'></image>
+  <image src='http://127.0.0.1:3000/8.png' mode='widthFix'></image>
+  <image src='http://127.0.0.1:3000/9.png' mode='widthFix'></image>
+  <text>然后在图形下面再加个圆背景，整个图形制作完成！</text>
+  <image src='http://127.0.0.1:3000/10.png' mode='widthFix'></image>
+  <text>THANKS！</text>
+  -->
+</view>
+<!--打分-->
+<view class='score'>
+  <text wx:if="{{score}}">打分后显示文章质量得分，当前{{list.click}}人打分</text>
+  <view wx:else>
+    <view class='star'>
+      <text>文章价值：{{list.score}}分</text>
+      <view class='xing'>
+        <text class='bottom'>★★★★★</text>
+        <text class='top' style="width:{{list.width}}rpx">★★★★★</text>
+      </view>
+      <text>{{list.click}}人打分</text>
+    </view>
+  </view>
+</view>
+<view class='worth' bindtap="score">
+  <view data-id="1" data-score="0">T﹏T无价值</view>
+  <view data-id="2" data-score="3">･_･还可以</view>
+  <view data-id="3" data-score="5">^▽^有价值</view>
+</view>
+<!--评论-->
+<view class='discuss topic'>
+  <view class='slide'></view>
+  <text>热门评论</text>
+</view>
+<view class="dis_bottom">
+  <view class='dis_container' wx:for="{{list_last}}" wx:key="{{item.id}}">
+    <view class='discuss_content' wx:if="{{showContent}}">
+      <view class='left'>
+        <image src="{{item.pic}}"></image>
+      </view>
+      <view class='right'>
+        <text class='dis_title'>{{item.userName}}</text>
+        <text class='dis_time'>{{item.time}}</text>
+        <text class='dis_content'>{{item.content}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{!showContent}}" class="noComment" style="text-align:center">
+  <image src="/img/comment.png" style="width:120rpx" mode='widthFix'></image>
+  <view style="color:#999;font-size:14px">暂无评论</view>
+</view>
+<!--最底部评论-->
+<view class="comment" bindtap="showDialogBtn">
+  <view class="input">说两句</view>
+</view>
+<!--弹出模态框-->
+<view class="modal-mask" bindtap="hideModal" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+
+  <view class="modal-title">评论一下</view>
+  <form bindsubmit='bindFormSubmit'>
+    <view class="modal-content">
+      <view class="modal-input">
+        <textarea placeholder="欢迎发表您的观点" auto-focus class='input'  name="textarea" />
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+      <view class="btn-confirm">
+        <button form-type="submit">发送</button>
+      </view>
+    </view>
+  </form>
+</view>

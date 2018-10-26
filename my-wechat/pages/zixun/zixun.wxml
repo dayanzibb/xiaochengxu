@@ -1,0 +1,16 @@
+<!--pages/zixun/zixun.wxml-->
+<view class='list' bindtap="click" data-id="{{item.cid}}" wx:for="{{zixun_list}}" wx:key="item.id">
+  <view class='list_left'>
+    <image src="{{item.img}}"></image>
+  </view>
+  <view class='list_right'>
+    <text>{{item.title}}</text>
+    <view class="text">
+      <text>{{item.time}}</text>
+      <text>{{item.click}}评</text>
+    </view>
+  </view>
+</view>
+
+
+

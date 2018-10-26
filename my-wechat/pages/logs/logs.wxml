@@ -1,0 +1,65 @@
+<!--logs.wxml-->
+<view class='title' wx:if="{{!hasUserInfo}}">
+  <image src="/img/user.gif"></image>
+  <button open-type='getUserInfo'  wx:if="{{!hasUserInfo}}" bindgetuserinfo="getInfo">点击登录</button>
+</view>
+<view class='title' wx:else>
+  <image src="{{user.pic}}" mode="cover"></image>
+  <text>{{user.name}}</text>
+</view>
+<!--<button open-type='getUserInfo' bindtap="getUser" wx:if="{{!hasUserInfo}}">获取用户信息</button>-->
+<view class='rule'></view>
+<view class='cell' bindtap="click">
+  <view class='left'>
+    <image src="/img/rename.png"></image>
+    <text>个人信息</text>
+  </view>
+  <view class='right'></view>
+</view>
+<view class='rule'></view>
+<view class='cell'>
+  <view class='left'>
+    <image src="/img/myname.png"></image>
+    <text>昵称</text>
+  </view>
+  <text class='name' wx:if="{{user.nickName!=null}}">{{user.nickName}}</text>
+  <text class='name' wx:else>未填写</text>
+</view>
+<view class='rule'></view>
+<view class='cell'>
+  <view class='left'>
+    <image src="/img/birthday.png"></image>
+    <text>生日</text>
+  </view>
+  <text class='name' wx:if="{{user.birthday!=null}}">{{user.birthday}}</text>
+  <text class='name' wx:else>未填写</text>
+</view>
+<view class='rule'></view>
+<view class='cell'>
+  <view class='left'>
+    <image src="/img/phone.png"></image>
+    <text>电话</text>
+  </view>
+  <text class='name' wx:if="{{user.phone!=null}}">{{user.phone}}</text>
+  <text class='name' wx:else>未填写</text>
+</view>
+<view class='rule'></view>
+<view class='cell'>
+  <view class='left'>
+    <image src="/img/email.png"></image>
+    <text>邮箱</text>
+  </view>
+  <text class='name' wx:if="{{user.email!=null}}">{{user.email}}</text>
+  <text class='name' wx:else>未填写</text>
+</view>
+<view class='rule'></view>
+<view class='cell'>
+  <view class='left'>
+    <image src="/img/address.png"></image>
+    <text>地址</text>
+  </view>
+  <text class='name' wx:if="{{user.city!='undefined'}}">{{user.city}}</text>
+  <text class='name' wx:else>未填写</text>
+</view>
+<view class='rule'></view>
+

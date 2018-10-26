@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/zixun_news/zixun_news",
+    "pages/zixun/zixun",
+    "pages/single_topic/single_topic",
+    "pages/single/single",
+    "pages/mynews/mynews",
+    "pages/multi/multi",
+    "pages/multi_topic/multi_topic",
+    "pages/judge/judge",
+    "pages/judge_topic/judge_topic",
+    "pages/fill/fill",
+    "pages/fill_topic/fill_topic",
+    "pages/short/short",
+    "pages/short_topic/short_topic"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#21c0c0",
+    "navigationBarTitleText": "优才学堂",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#21c0c0",
+    "borderStyle": "#fff",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/index_icon2.png",
+        "selectedIconPath": "img/index_icon.png"
+      },
+      {
+        "pagePath": "pages/zixun/zixun",
+        "text": "资讯",
+        "iconPath": "img/zixun.png",
+        "selectedIconPath": "img/zixun2.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "我的",
+        "iconPath": "img/my.png",
+        "selectedIconPath": "img/my2.png"
+      }
+    ]
+  }
+}

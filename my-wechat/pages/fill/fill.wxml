@@ -1,0 +1,10 @@
+<!--pages/fill/fill.wxml-->
+<view class='cell' wx:for="{{list}}" wx:key="item.id" style="border-bottom:1rpx solid {{item.color}}" bindtap="fill_topic" data-sid="{{item.sid}}">
+  <view class='img' style="background:{{item.color}}">
+    <image src="/img/circle.png"></image>
+    <text class='cell-text'>{{item.title}}</text>
+  </view>
+  <view class='text-right'>
+    <text>{{item.content}}</text>
+  </view>
+</view> 

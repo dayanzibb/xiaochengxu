@@ -1,0 +1,38 @@
+/* pages/judge/judge.wxss */
+/* pages/single/single.wxss */
+.cell{
+  padding-top:20rpx;
+  margin-left: 20rpx;
+  margin-right:20rpx;
+  display: flex;
+}
+.img{
+  width: 180rpx;
+  height: 180rpx;
+  text-align: center;
+  line-height: 180rpx;
+  position: relative;
+}
+.img image{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 140rpx;
+  height: 140rpx;
+  margin-left: -70rpx;
+  margin-top:-70rpx;
+}
+.cell-text{
+  color:#fff;
+  font-size: 14px;
+}
+.text-right{
+  width: 80%;
+  padding-left:10rpx;
+  line-height: 30rpx;
+  text-indent: 40rpx;
+}
+.text-right text{
+  font-size: 12px;
+  color: #666;
+}

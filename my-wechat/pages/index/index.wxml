@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<view class='slider' bindtap="zixunPages">
+  <swiper autoplay interval='3500' indicator-dots='{{true}}'>
+   <swiper-item wx:for="{{carrousel}}" wx:key="{{item.id}}">
+    <image src="{{item.img_url}}" mode='aspectFill'></image>
+  </swiper-item>
+  </swiper>
+</view>
+<view class='list'>
+<image src="/img/index_bg.png" class='img1'></image>
+<image src="/img/index_leftcir.png" class='img2'></image>
+  <view class='li li1' bindtap="singleSelect">
+    <image src="/img/index_danxuan.png"></image>
+    <view class='text'>
+        <text>单选题</text>
+        <text class='en'>Single Choice</text>
+    </view>
+  </view>
+  <view class='li li2' bindtap="multiSelect">
+    <image src="/img/index_duoxuan.png"></image>
+    <view class='text'>
+        <text>多选题</text>
+        <text class='en'>Multiple Choice</text>
+    </view>
+  </view>
+  <view class='li li3' bindtap="fillSelect">
+    <image src="/img/index_tiankong.png"></image>
+    <view class='text'>
+        <text>填空题</text>
+        <text class='en'>Blank Filling Question</text>
+    </view>
+  </view>
+  <view class='li li4' bindtap="judgeSelect">
+    <image src="/img/index_panduan.png"></image>
+    <view class='text'>
+        <text>判断题</text>
+        <text class='en'>True False Question</text>
+    </view>
+  </view>
+  <view class='li li5' bindtap="shortSelect">
+    <image src="/img/index_wenda.png"></image>
+    <view class='text'>
+        <text>问答题</text>
+        <text class='en'>Essay Question</text>
+    </view>
+  </view>
+</view>
